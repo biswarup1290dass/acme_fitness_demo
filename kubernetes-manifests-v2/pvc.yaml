@@ -1,11 +1,11 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cart-redis-pvc-${NS}
+  name: order-postgres-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -13,11 +13,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cart-pvc-${NS}
+  name: order-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -25,11 +25,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: catalog-mongo-pvc-${NS}
+  name: users-mongo-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -37,11 +37,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: catalog-pvc-${NS}
+  name: users-redis-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -49,11 +49,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: order-postgres-pvc-${NS}
+  name: order-postgres-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -61,11 +61,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: order-pvc-${NS}
+  name: order-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -73,11 +73,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: users-mongo-pvc-${NS}
+  name: users-mongo-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -85,11 +85,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: users-redis-pvc-${NS}
+  name: users-redis-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
@@ -97,13 +97,11 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: users-pvc-${NS}
+  name: users-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-storage
   accessModes:
-  - ReadWriteMany
+  - ReadWriteOnce
   resources:
     requests:
       storage: 250Mi
----
-
