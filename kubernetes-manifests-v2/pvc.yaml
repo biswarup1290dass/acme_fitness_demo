@@ -1,0 +1,109 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cart-redis-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cart-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: catalog-mongo-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: catalog-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: order-postgres-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: order-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-mongo-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-redis-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-pvc-${NS}
+spec:
+  storageClassName: manual
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 250Mi
+---
+

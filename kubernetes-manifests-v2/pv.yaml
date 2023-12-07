@@ -1,0 +1,145 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cart-redis-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/cart-redis-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: cart-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/cart-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: catalog-mongo-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/catalog-mongo-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: catalog-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/catalog-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: order-postgres-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/order-postgres-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: order-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/order-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: users-mongo-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-mongo-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: users-redis-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-redis-pv-${NS}
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: users-pv-${NS}
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
+  capacity:
+    storage: 250Mi
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-pv-${NS}
+---
+
