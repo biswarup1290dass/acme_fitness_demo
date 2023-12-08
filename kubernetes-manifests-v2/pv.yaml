@@ -1,224 +1,145 @@
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: users-pv
+  name: cart-redis-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/users-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/cart-redis-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: cart-redis-pv
+  name: cart-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem
-  local:
-    path: /tmp/local/cart-redis-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/cart-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: cart-pv
+  name: catalog-mongo-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/cart-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/catalog-mongo-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: catalog-mongo-pv
+  name: catalog-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/catalog-mongo-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/catalog-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: catalog-pv
+  name: order-postgres-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/catalog-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/order-postgres-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: order-pv
+  name: order-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem
-  local:
-    path: /tmp/local/order-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/order-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: order-postgres-pv
+  name: users-mongo-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/order-postgres-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-mongo-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: users-mongo-pv
+  name: users-redis-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/users-mongo-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-redis-pv-${NS}
 ---
-apiVersion: v1
 kind: PersistentVolume
+apiVersion: v1
 metadata:
-  name: users-redis-pv
+  name: users-pv-${NS}
   labels:
     type: local
 spec:
-  storageClassName: local-storage
-  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  persistentVolumeReclaimPolicy: Delete
   capacity:
     storage: 250Mi
   accessModes:
-    - ReadWriteOnce
-  volumeMode: Filesystem  
-  local:
-    path: /tmp/local/users-redis-pv
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-              operator: In
-              values:
-                - ${NODE_NAME}
+  - ReadWriteMany
+  hostPath:
+    path: /tmp/local/users-pv-${NS}
+---
+
