@@ -1,0 +1,109 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cart-redis-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: cart-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: catalog-mongo-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: catalog-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: order-postgres-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: order-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-mongo-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-redis-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: users-pvc
+spec:
+  storageClassName: local-storage
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 250Mi
+---
+
