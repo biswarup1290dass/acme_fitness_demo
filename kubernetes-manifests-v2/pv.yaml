@@ -18,8 +18,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -41,8 +43,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -64,8 +68,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -87,8 +93,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -110,8 +118,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -133,8 +143,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -156,8 +168,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -179,8 +193,10 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -202,5 +218,7 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: node-role.kubernetes.io/control-plane
-              operator: DoesNotExist
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - NODE_NAME
